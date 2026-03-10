@@ -1,3 +1,6 @@
+export const dynamic = 'force-dynamic'
+
+export const dynamic = 'force-dynamic'
 // src/app/api/chat/send/route.ts
 import { NextRequest, NextResponse } from 'next/server'
 import { getSessionFromRequest } from '@/lib/auth'
@@ -57,10 +60,11 @@ export async function POST(req: NextRequest) {
     })
 
     // Build Gemini history
+    // Build Gemini history
     const history: any[] = conversation.messages.map(m => ({
-  role: m.role === 'user' ? 'user' : 'model',
-  parts: [{ text: m.content }],
-}))
+      role: m.role === 'user' ? 'user' : 'model',
+      parts: [{ text: m.content }],
+    }))
 
 
     // Stream response
