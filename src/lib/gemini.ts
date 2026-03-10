@@ -61,8 +61,8 @@ DECISION MODELS:
 LANGUAGE: Respond in English. If user writes in Turkish, respond in Turkish.`
 
 export async function streamArchitectResponse(
-  messages: { role: 'user' | 'model'; parts: { text: string }[] }[],
-  language: 'tr' | 'en' = 'tr'
+messages: any[],
+language: 'tr' | 'en' = 'tr'
 ) {
   const model = genAI.getGenerativeModel({
     model: 'gemini-1.5-flash',
@@ -82,7 +82,7 @@ export async function streamArchitectResponse(
 }
 
 export async function getArchitectResponse(
-  messages: { role: 'user' | 'model'; parts: { text: string }[] }[],
+  messages: any[],
   language: 'tr' | 'en' = 'tr'
 ): Promise<string> {
   const model = genAI.getGenerativeModel({
