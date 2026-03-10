@@ -271,7 +271,7 @@ export default function HomePage() {
         <div style={{ display: 'flex', gap: '4px', background: 'var(--card)', border: '1px solid var(--border)', borderRadius: '12px', padding: '4px', marginBottom: '24px', overflowX: 'auto' }}>
           {demos.map((d, i) => (
             <button key={i} onClick={() => setActiveDemo(i)} style={{
-              flex: 1, padding: '9px 14px', borderRadius: '8px', border: 'none', cursor: 'pointer',
+              flex: 1, padding: '9px 14px', borderRadius: '8px', cursor: 'pointer',
               fontFamily: 'DM Sans, sans-serif', fontSize: '0.82rem', whiteSpace: 'nowrap',
               background: activeDemo === i ? 'var(--gold-dim)' : 'none',
               color: activeDemo === i ? 'var(--gold)' : 'var(--muted)',

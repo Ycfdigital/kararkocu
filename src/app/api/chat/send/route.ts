@@ -59,10 +59,9 @@ export async function POST(req: NextRequest) {
     // Build Gemini history
     const history = conversation.messages.map(m => ({
       role: m.role === 'user' ? 'user' as const : 'model' as const,
-      parts: [{ text: m.content }],
+      parts: [{ text: m.content }] as unknown as [{ text: string }],
     }))
 
-    history.push({ role: 'user', parts: [{ text: message }] })
 
     // Stream response
     const stream = await streamArchitectResponse(history, language as 'tr' | 'en')
