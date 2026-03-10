@@ -1,6 +1,5 @@
 export const dynamic = 'force-dynamic'
 
-export const dynamic = 'force-dynamic'
 // src/app/api/chat/send/route.ts
 import { NextRequest, NextResponse } from 'next/server'
 import { getSessionFromRequest } from '@/lib/auth'
