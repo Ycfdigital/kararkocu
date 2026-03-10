@@ -57,9 +57,10 @@ export async function POST(req: NextRequest) {
     })
 
     // Build Gemini history
-    const history = conversation.messages.map(m => ({
-      role: m.role === 'user' ? 'user' as const : 'model' as const,
-      parts: [{ text: m.content }] as unknown as [{ text: string }],
+    // Build Gemini history
+    const history: any[] = conversation.messages.map(m => ({
+      role: m.role === 'user' ? 'user' : 'model',
+      parts: [{ text: m.content }],
     }))
 
 
